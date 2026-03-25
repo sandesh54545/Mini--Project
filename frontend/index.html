@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataQuality — Anomaly Detection System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-brand">
+      <span class="nav-icon">⬡</span>
+      <span>DataQuality<em>OS</em></span>
+    </div>
+    <div class="nav-meta">Swizosoft (OPC) Pvt Ltd</div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">ML-Powered · IsolationForest · FastAPI</div>
+      <h1>Data Quality &amp;<br/>Anomaly Detection</h1>
+      <p>Upload your CSV dataset. Get instant insights on missing values, duplicates, anomalies — with actionable fixes and a downloadable PDF report.</p>
+    </div>
+  </header>
+
+  <!-- UPLOAD ZONE -->
+  <main class="main">
+    <section class="upload-section" id="uploadSection">
+      <div class="upload-card" id="dropZone">
+        <div class="upload-icon">⬆</div>
+        <p class="upload-primary">Drop your CSV here or <label for="fileInput" class="browse-link">browse</label></p>
+        <p class="upload-sub">Supports CSV files up to 50 MB</p>
+        <input type="file" id="fileInput" accept=".csv" hidden />
+        <div class="file-selected" id="fileSelected"></div>
+        <button class="btn-analyse" id="analyseBtn" disabled>Analyse Dataset</button>
+      </div>
+    </section>
+
+    <!-- LOADER -->
+    <div class="loader-wrap" id="loaderWrap" style="display:none">
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Running analysis…</p>
+    </div>
+
+    <!-- RESULTS -->
+    <section class="results" id="results" style="display:none">
+
+      <!-- SCORE BANNER -->
+      <div class="score-banner" id="scoreBanner">
+        <div class="score-left">
+          <div class="score-circle" id="scoreCircle">
+            <svg viewBox="0 0 120 120">
+              <circle class="track" cx="60" cy="60" r="52"/>
+              <circle class="fill" id="scoreFill" cx="60" cy="60" r="52"/>
+            </svg>
+            <span id="scoreNum">0</span>
+          </div>
+        </div>
+        <div class="score-right">
+          <h2 id="scoreRating">—</h2>
+          <p id="scoreFile">—</p>
+          <div class="score-pills" id="scorePills"></div>
+          <button class="btn-download" id="downloadBtn">⬇ Download PDF Report</button>
+        </div>
+      </div>
+
+      <!-- SUMMARY CARDS -->
+      <div class="summary-grid" id="summaryGrid"></div>
+
+      <!-- TABS -->
+      <div class="tabs">
+        <button class="tab active" data-tab="missing">Missing Values</button>
+        <button class="tab" data-tab="duplicates">Duplicates</button>
+        <button class="tab" data-tab="anomalies">Anomaly Detection</button>
+        <button class="tab" data-tab="columns">Column Stats</button>
+        <button class="tab" data-tab="recommendations">Recommendations</button>
+      </div>
+
+      <!-- TAB PANELS -->
+      <div class="tab-content" id="tabContent"></div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>DataQualityOS &copy; 2025 · Swizosoft (OPC) Pvt Ltd</span>
+    <span>Sandesh Walvekar &amp; Shrinivas Motar · MMEC CSE</span>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
