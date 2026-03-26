@@ -1,8 +1,8 @@
-fastapi==0.111.0
-uvicorn[standard]==0.30.1
-pandas==2.2.2
-numpy==1.26.4
-scikit-learn==1.5.0
-mysql-connector-python==8.4.0
-python-multipart==0.0.9
-reportlab==4.2.2
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pandas==2.2.3
+numpy==2.2.1
+scikit-learn==1.6.1
+mysql-connector-python==9.1.0
+python-multipart==0.0.20
+reportlab==4.2.5
